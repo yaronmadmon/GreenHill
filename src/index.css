@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --color-near-black: #0F0F0F;
+  --color-warm-gray:  #F7F6F3;
+  --color-gold:       #B59A5A;
+  --color-gold-light: #D4B87A;
+  --color-gold-dark:  #8C7340;
+  --color-green-dark: #1E3A2F;
+  --color-green-mid:  #2A5040;
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: #ffffff;
+  color: #0F0F0F;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100svh;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+p {
+  line-height: 1.7;
+}
+
+/* ── Scroll-triggered fade-in ─────────────────────────────── */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+
+/* ── Hero reveal (auto-plays on load) ─────────────────────── */
+@keyframes heroReveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-animate {
+  animation: heroReveal 1s ease forwards;
+}
+
+.hero-animate-delay {
+  animation: heroReveal 1s ease 0.25s both;
+}
+
+.hero-animate-delay-2 {
+  animation: heroReveal 1s ease 0.5s both;
+}
+
+/* ── Bounce for scroll chevron ────────────────────────────── */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
+}
+
+.animate-bounce-slow {
+  animation: bounce 2s ease-in-out infinite;
+}
