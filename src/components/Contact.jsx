@@ -156,10 +156,10 @@ export default function Contact() {
               <div>
                 <p className="text-white/40 text-xs uppercase tracking-widest mb-1">Phone</p>
                 <a
-                  href="tel:+10000000000"
+                  href="tel:+17186644026"
                   className="text-white text-sm hover:text-gold transition-colors"
                 >
-                  (XXX) XXX-XXXX
+                  718-664-4026
                 </a>
               </div>
             </div>
@@ -169,10 +169,10 @@ export default function Contact() {
               <div>
                 <p className="text-white/40 text-xs uppercase tracking-widest mb-1">Email</p>
                 <a
-                  href="mailto:info@greenhillmgmt.com"
+                  href="mailto:thegreenhillrealty@gmail.com"
                   className="text-white text-sm hover:text-gold transition-colors"
                 >
-                  info@greenhillmgmt.com
+                  thegreenhillrealty@gmail.com
                 </a>
               </div>
             </div>

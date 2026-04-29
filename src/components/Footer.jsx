@@ -45,14 +45,14 @@ export default function Footer() {
         <div>
           <p className="text-white text-xs uppercase tracking-widest mb-5">Contact</p>
           <div className="flex flex-col gap-3">
-            <a href="tel:+10000000000" className="text-xs hover:text-gold transition-colors">
-              (XXX) XXX-XXXX
+            <a href="tel:+17186644026" className="text-xs hover:text-gold transition-colors">
+              718-664-4026
             </a>
             <a
-              href="mailto:info@greenhillmgmt.com"
+              href="mailto:thegreenhillrealty@gmail.com"
               className="text-xs hover:text-gold transition-colors"
             >
-              info@greenhillmgmt.com
+              thegreenhillrealty@gmail.com
             </a>
             <p className="text-xs">New York · New Jersey · Connecticut</p>
           </div>
