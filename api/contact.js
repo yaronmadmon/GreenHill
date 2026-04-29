@@ -33,14 +33,16 @@ export default async function handler(req, res) {
       }),
     })
 
+    const data = await response.json()
+
     if (!response.ok) {
-      const error = await response.json()
-      throw new Error(error.message || 'Resend API error')
+      console.error('Resend error:', JSON.stringify(data))
+      return res.status(500).json({ error: data.message || 'Resend API error', detail: data })
     }
 
     return res.status(200).json({ success: true })
   } catch (err) {
-    console.error('Contact form error:', err)
-    return res.status(500).json({ error: 'Failed to send message' })
+    console.error('Contact form error:', err.message)
+    return res.status(500).json({ error: err.message })
   }
 }
