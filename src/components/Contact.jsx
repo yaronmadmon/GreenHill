@@ -19,10 +19,19 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
-    // TODO: wire up EmailJS, Formspree, or a serverless function here
-    await new Promise((r) => setTimeout(r, 800))
-    setLoading(false)
-    setSubmitted(true)
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (!res.ok) throw new Error('Send failed')
+      setSubmitted(true)
+    } catch {
+      alert('Something went wrong. Please try calling or emailing us directly.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
