@@ -137,7 +137,6 @@ export default function Contact() {
                     name="consent"
                     checked={form.consent}
                     onChange={handleChange}
-                    required
                     className="mt-1 w-4 h-4 shrink-0 accent-gold cursor-pointer"
                   />
                   <span className="text-white/50 text-xs leading-relaxed">
@@ -150,8 +149,8 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  disabled={loading || !form.consent}
-                  className="self-start bg-gold text-white text-xs uppercase tracking-widest px-8 py-4 hover:bg-gold-light disabled:opacity-60 disabled:cursor-not-allowed transition-colors duration-200"
+                  disabled={loading}
+                  className="self-start bg-gold text-white text-xs uppercase tracking-widest px-8 py-4 hover:bg-gold-light disabled:opacity-60 transition-colors duration-200"
                 >
                   {loading ? 'Sending…' : 'Send Message'}
                 </button>
