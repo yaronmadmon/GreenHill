@@ -140,10 +140,11 @@ export default function Contact() {
                     className="mt-1 w-4 h-4 shrink-0 accent-gold cursor-pointer"
                   />
                   <span className="text-white/50 text-xs leading-relaxed">
-                    By submitting this form, I consent to being contacted by Green Hill Management
-                    at the phone number and email provided above. I understand that my information
-                    will be used solely to respond to my inquiry and will not be shared with
-                    third parties.
+                    By checking this box, I consent to being contacted by Green Hill Management
+                    via phone, email, and SMS text messages at the contact information provided
+                    above. Message and data rates may apply. Message frequency varies. Reply STOP
+                    to opt out of SMS at any time. I understand that my information will be used
+                    solely to respond to my inquiry and will not be shared with third parties.
                   </span>
                 </label>
 
