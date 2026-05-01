@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Phone, Mail, MapPin, CheckCircle } from 'lucide-react'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 
-const initialForm = { name: '', email: '', phone: '', message: '' }
+const initialForm = { name: '', email: '', phone: '', message: '', consent: false }
 
 export default function Contact() {
   const [form, setForm]       = useState(initialForm)
@@ -13,8 +13,10 @@ export default function Contact() {
   const formRef    = useIntersectionObserver({ threshold: 0.1 })
   const infoRef    = useIntersectionObserver({ threshold: 0.1 })
 
-  const handleChange = (e) =>
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target
+    setForm((prev) => ({ ...prev, [name]: type === 'checkbox' ? checked : value }))
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -129,10 +131,27 @@ export default function Contact() {
                   />
                 </div>
 
+                <label className="flex items-start gap-3 cursor-pointer group">
+                  <input
+                    type="checkbox"
+                    name="consent"
+                    checked={form.consent}
+                    onChange={handleChange}
+                    required
+                    className="mt-1 w-4 h-4 shrink-0 accent-gold cursor-pointer"
+                  />
+                  <span className="text-white/50 text-xs leading-relaxed">
+                    By submitting this form, I consent to being contacted by Green Hill Management
+                    at the phone number and email provided above. I understand that my information
+                    will be used solely to respond to my inquiry and will not be shared with
+                    third parties.
+                  </span>
+                </label>
+
                 <button
                   type="submit"
-                  disabled={loading}
-                  className="self-start bg-gold text-white text-xs uppercase tracking-widest px-8 py-4 hover:bg-gold-light disabled:opacity-60 transition-colors duration-200"
+                  disabled={loading || !form.consent}
+                  className="self-start bg-gold text-white text-xs uppercase tracking-widest px-8 py-4 hover:bg-gold-light disabled:opacity-60 disabled:cursor-not-allowed transition-colors duration-200"
                 >
                   {loading ? 'Sending…' : 'Send Message'}
                 </button>
