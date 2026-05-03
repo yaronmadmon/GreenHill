@@ -1,62 +1,74 @@
 import { ChevronDown } from 'lucide-react'
-import heroImg from '../assets/hero.png'
 
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-green-dark"
     >
-      {/* Background image */}
-      <img
-        src={heroImg}
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover"
-        aria-hidden="true"
-      />
+      {/* Decorative gold line left */}
+      <div className="absolute left-0 top-0 bottom-0 w-1 bg-gold opacity-60" aria-hidden="true" />
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-near-black/60" aria-hidden="true" />
+      {/* Subtle dark gradient overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-to-br from-near-black/60 via-transparent to-near-black/40" aria-hidden="true" />
+
+      {/* Large decorative background text */}
+      <p
+        className="absolute inset-0 flex items-center justify-center text-white/[0.03] font-display font-light select-none pointer-events-none"
+        style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(8rem, 20vw, 22rem)', lineHeight: 1 }}
+        aria-hidden="true"
+      >
+        GHM
+      </p>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <p className="hero-animate text-gold text-xs tracking-[0.4em] uppercase mb-6">
-          Real Estate Solutions
-        </p>
+      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+        {/* Gold eyebrow */}
+        <div className="hero-animate flex items-center justify-center gap-4 mb-8">
+          <div className="h-px w-12 bg-gold" />
+          <p className="text-gold text-xs tracking-[0.5em] uppercase">
+            Green Hill Management
+          </p>
+          <div className="h-px w-12 bg-gold" />
+        </div>
 
+        {/* Headline */}
         <h1
-          className="hero-animate-delay font-display text-white text-5xl md:text-7xl lg:text-8xl font-light leading-none mb-8"
-          style={{ fontFamily: 'var(--font-display)' }}
+          className="hero-animate-delay font-display text-white font-light leading-none mb-8"
+          style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.8rem, 8vw, 6.5rem)' }}
         >
-          Helping You Navigate
+          Your Home.
           <br />
-          <em className="not-italic text-white/90">Your Property</em> with Confidence
+          <span className="text-gold">Your Options.</span>
+          <br />
+          Your Decision.
         </h1>
 
-        <p className="hero-animate-delay-2 text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-          We work with homeowners to explore real solutions—whether you're selling,
-          refinancing, or just need guidance.
+        {/* Subheadline */}
+        <p className="hero-animate-delay-2 text-white/60 text-base md:text-lg max-w-xl mx-auto mb-12 font-light leading-relaxed tracking-wide">
+          We help homeowners facing difficult situations understand their choices —
+          with honesty, care, and zero pressure.
         </p>
 
-        <div className="hero-animate-delay-2 flex flex-col sm:flex-row gap-4 justify-center">
+        {/* Single CTA */}
+        <div className="hero-animate-delay-2">
           <a
             href="#contact"
-            className="bg-gold text-white text-xs uppercase tracking-widest px-8 py-4 hover:bg-gold-light transition-all duration-200"
+            className="inline-block bg-gold text-white text-xs uppercase tracking-[0.3em] px-10 py-4 hover:bg-gold-light transition-colors duration-200"
           >
             Get a Free Consultation
           </a>
-          <a
-            href="#contact"
-            className="border border-white text-white text-xs uppercase tracking-widest px-8 py-4 hover:bg-white hover:text-near-black transition-all duration-200"
-          >
-            Speak with Ronnie
-          </a>
         </div>
+
+        {/* Trust line */}
+        <p className="hero-animate-delay-2 text-white/30 text-xs tracking-widest uppercase mt-8">
+          Confidential &nbsp;·&nbsp; No Obligation &nbsp;·&nbsp; No Fees
+        </p>
       </div>
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce-slow">
-        <ChevronDown className="text-white/50" size={28} />
+        <ChevronDown className="text-gold/50" size={26} />
       </div>
     </section>
   )
