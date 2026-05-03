@@ -26,7 +26,7 @@ export default function Hero() {
         {/* Gold eyebrow */}
         <div className="hero-animate flex items-center justify-center gap-4 mb-8">
           <div className="h-px w-12 bg-gold" />
-          <p className="text-gold" style={{ fontFamily: "'Great Vibes', cursive", fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
+          <p className="text-gold text-xs tracking-[0.5em] uppercase">
             Green Hill Management
           </p>
           <div className="h-px w-12 bg-gold" />
