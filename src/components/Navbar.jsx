@@ -50,7 +50,7 @@ export default function Navbar() {
 
         <a
           href="#contact"
-          className="hidden md:inline-block border border-white text-white text-xs uppercase tracking-widest px-5 py-2.5 hover:bg-white hover:text-green-dark transition-all duration-200"
+          className="hidden md:inline-block border border-white text-white text-xs uppercase tracking-widest px-5 py-2.5 rounded-xl hover:bg-white hover:text-green-dark transition-all duration-200"
         >
           Get Started
         </a>
@@ -81,7 +81,7 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={() => setOpen(false)}
-            className="mt-2 border border-white text-white text-xs uppercase tracking-widest px-5 py-3 text-center hover:bg-white hover:text-green-dark transition-all duration-200"
+            className="mt-2 border border-white text-white text-xs uppercase tracking-widest px-5 py-3 rounded-xl text-center hover:bg-white hover:text-green-dark transition-all duration-200"
           >
             Get Started
           </a>

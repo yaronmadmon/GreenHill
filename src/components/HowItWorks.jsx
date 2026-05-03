@@ -78,7 +78,7 @@ export default function HowItWorks() {
         <div className="text-center mt-16">
           <a
             href="#contact"
-            className="inline-block bg-gold text-white text-xs uppercase tracking-widest px-8 py-4 hover:bg-gold-light transition-colors duration-200"
+            className="inline-block bg-gold text-white text-xs uppercase tracking-widest px-8 py-4 rounded-xl hover:bg-gold-light transition-colors duration-200"
           >
             Start the Conversation
           </a>

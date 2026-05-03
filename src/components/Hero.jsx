@@ -54,7 +54,7 @@ export default function Hero() {
         <div className="hero-animate-delay-2">
           <a
             href="#contact"
-            className="inline-block bg-gold text-white text-xs uppercase tracking-[0.3em] px-10 py-4 hover:bg-gold-light transition-colors duration-200"
+            className="inline-block bg-gold text-white text-xs uppercase tracking-[0.3em] px-10 py-4 rounded-xl hover:bg-gold-light transition-colors duration-200"
           >
             Get a Free Consultation
           </a>

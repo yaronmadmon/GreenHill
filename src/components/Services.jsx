@@ -35,9 +35,9 @@ function ServiceCard({ icon: Icon, title, description, delay }) {
   return (
     <div
       ref={ref}
-      className={`fade-in-up ${delay} group border border-near-black/10 p-10 hover:border-gold hover:shadow-lg transition-all duration-300`}
+      className={`fade-in-up ${delay} group border border-near-black/10 p-8 rounded-2xl hover:border-gold hover:bg-warm-gray transition-all duration-300`}
     >
-      <div className="w-12 h-12 flex items-center justify-center border border-gold/40 mb-6 group-hover:bg-gold group-hover:border-gold transition-all duration-300">
+      <div className="w-12 h-12 flex items-center justify-center border border-gold/40 rounded-xl mb-6 group-hover:bg-gold group-hover:border-gold transition-all duration-300">
         <Icon size={20} className="text-gold group-hover:text-white transition-colors duration-300" />
       </div>
       <h3
