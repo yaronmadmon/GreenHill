@@ -28,8 +28,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-18">
         <a
           href="#hero"
-          className="font-display text-white text-xl tracking-wider"
-          style={{ fontFamily: 'var(--font-display)' }}
+          className="text-white text-2xl"
+          style={{ fontFamily: "'Great Vibes', cursive" }}
         >
           Green Hill Management
         </a>
