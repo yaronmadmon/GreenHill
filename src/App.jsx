@@ -13,7 +13,7 @@ function Fade({ from, to }) {
     <div
       aria-hidden="true"
       style={{ background: `linear-gradient(to bottom, ${from}, ${to})` }}
-      className="h-24 -mt-1 -mb-1"
+      className="h-10 -mt-1 -mb-1"
     />
   )
 }
