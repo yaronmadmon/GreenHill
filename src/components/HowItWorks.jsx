@@ -49,7 +49,7 @@ export default function HowItWorks() {
     <section id="how-it-works" className="bg-green-dark py-28 px-6">
       <div className="max-w-5xl mx-auto">
         <div ref={headingRef} className="fade-in-up text-center mb-20">
-          <p className="text-gold text-xs tracking-[0.4em] uppercase mb-5">The Process</p>
+          <p className="text-gold text-sm tracking-[0.3em] uppercase mb-5">The Process</p>
           <h2
             className="font-display text-white text-4xl md:text-5xl font-light"
             style={{ fontFamily: 'var(--font-display)' }}

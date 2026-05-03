@@ -26,7 +26,7 @@ function TestimonialCard({ quote, name, location, delay }) {
   return (
     <div
       ref={ref}
-      className={`fade-in-up ${delay} bg-white p-10 flex flex-col justify-between`}
+      className={`fade-in-up ${delay} bg-white p-10 rounded-2xl flex flex-col justify-between`}
     >
       <div>
         <p
@@ -53,7 +53,7 @@ export default function Testimonials() {
     <section id="testimonials" className="bg-warm-gray py-28 px-6">
       <div className="max-w-6xl mx-auto">
         <div ref={headingRef} className="fade-in-up text-center mb-16">
-          <p className="text-gold text-xs tracking-[0.4em] uppercase mb-5">Client Stories</p>
+          <p className="text-gold text-sm tracking-[0.3em] uppercase mb-5">Client Stories</p>
           <h2
             className="font-display text-near-black text-4xl md:text-5xl font-light"
             style={{ fontFamily: 'var(--font-display)' }}

@@ -44,7 +44,7 @@ export default function Contact() {
 
         {/* Header */}
         <div ref={headingRef} className="fade-in-up text-center mb-16">
-          <p className="text-gold text-xs tracking-[0.4em] uppercase mb-5">Get in Touch</p>
+          <p className="text-gold text-sm tracking-[0.3em] uppercase mb-5">Get in Touch</p>
           <h2
             className="font-display text-white text-4xl md:text-5xl font-light"
             style={{ fontFamily: 'var(--font-display)' }}

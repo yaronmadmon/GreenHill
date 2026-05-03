@@ -15,7 +15,7 @@ export default function About() {
     <section id="about" className="bg-warm-gray py-28 px-6">
       <div className="max-w-4xl mx-auto text-center">
 
-        <p ref={headingRef} className="fade-in-up text-gold text-xs tracking-[0.4em] uppercase mb-5">
+        <p ref={headingRef} className="fade-in-up text-gold text-sm tracking-[0.3em] uppercase mb-5">
           Who We Are
         </p>
 
