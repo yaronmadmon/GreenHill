@@ -5,7 +5,7 @@ import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 const initialForm = { name: '', email: '', phone: '', message: '', consent: false }
 
 export default function Contact() {
-  const [form, setForm]       = useState(initialForm)
+  const [form, setForm]           = useState(initialForm)
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading]     = useState(false)
 
@@ -36,9 +36,12 @@ export default function Contact() {
     }
   }
 
+  const inputClass = 'w-full bg-white/10 border border-white/15 rounded-xl text-white text-sm px-4 py-3 focus:outline-none focus:border-gold transition-colors placeholder:text-white/30'
+
   return (
-    <section id="contact" className="bg-near-black py-28 px-6">
+    <section id="contact" className="bg-green-dark py-28 px-6">
       <div className="max-w-6xl mx-auto">
+
         {/* Header */}
         <div ref={headingRef} className="fade-in-up text-center mb-16">
           <p className="text-gold text-xs tracking-[0.4em] uppercase mb-5">Get in Touch</p>
@@ -54,8 +57,9 @@ export default function Contact() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
-          {/* Form */}
-          <div ref={formRef} className="fade-in-up lg:col-span-3">
+
+          {/* Form card */}
+          <div ref={formRef} className="fade-in-up lg:col-span-3 bg-white/5 rounded-2xl p-8 border border-white/10">
             {submitted ? (
               <div className="flex flex-col items-center justify-center h-full py-16 text-center">
                 <CheckCircle className="text-gold mb-6" size={48} />
@@ -73,65 +77,26 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-white/40 text-xs uppercase tracking-widest mb-2">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={form.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full bg-white/5 border border-white/10 text-white text-sm px-4 py-3 focus:outline-none focus:border-gold transition-colors placeholder:text-white/20"
-                      placeholder="Jane Smith"
-                    />
+                    <label className="block text-white/50 text-xs uppercase tracking-widest mb-2">Full Name *</label>
+                    <input type="text" name="name" value={form.name} onChange={handleChange} required className={inputClass} placeholder="Jane Smith" />
                   </div>
                   <div>
-                    <label className="block text-white/40 text-xs uppercase tracking-widest mb-2">
-                      Email *
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={form.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full bg-white/5 border border-white/10 text-white text-sm px-4 py-3 focus:outline-none focus:border-gold transition-colors placeholder:text-white/20"
-                      placeholder="jane@example.com"
-                    />
+                    <label className="block text-white/50 text-xs uppercase tracking-widest mb-2">Email *</label>
+                    <input type="email" name="email" value={form.email} onChange={handleChange} required className={inputClass} placeholder="jane@example.com" />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-white/40 text-xs uppercase tracking-widest mb-2">
-                    Phone
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={form.phone}
-                    onChange={handleChange}
-                    className="w-full bg-white/5 border border-white/10 text-white text-sm px-4 py-3 focus:outline-none focus:border-gold transition-colors placeholder:text-white/20"
-                    placeholder="(555) 000-0000"
-                  />
+                  <label className="block text-white/50 text-xs uppercase tracking-widest mb-2">Phone</label>
+                  <input type="tel" name="phone" value={form.phone} onChange={handleChange} className={inputClass} placeholder="(555) 000-0000" />
                 </div>
 
                 <div>
-                  <label className="block text-white/40 text-xs uppercase tracking-widest mb-2">
-                    Tell us about your situation *
-                  </label>
-                  <textarea
-                    name="message"
-                    value={form.message}
-                    onChange={handleChange}
-                    required
-                    rows={5}
-                    className="w-full bg-white/5 border border-white/10 text-white text-sm px-4 py-3 focus:outline-none focus:border-gold transition-colors placeholder:text-white/20 resize-none"
-                    placeholder="Briefly describe your property and what you're looking for…"
-                  />
+                  <label className="block text-white/50 text-xs uppercase tracking-widest mb-2">Tell us about your situation *</label>
+                  <textarea name="message" value={form.message} onChange={handleChange} required rows={5} className={`${inputClass} resize-none`} placeholder="Briefly describe your property and what you're looking for…" />
                 </div>
 
-                <label className="flex items-start gap-3 cursor-pointer group">
+                <label className="flex items-start gap-3 cursor-pointer">
                   <input
                     type="checkbox"
                     name="consent"
@@ -140,7 +105,7 @@ export default function Contact() {
                     required
                     className="mt-1 w-4 h-4 shrink-0 accent-gold cursor-pointer"
                   />
-                  <span className="text-white/50 text-xs leading-relaxed">
+                  <span className="text-white/40 text-xs leading-relaxed">
                     By checking this box, I consent to being contacted by Green Hill Management
                     via phone, email, and SMS text messages at the contact information provided
                     above. Message and data rates may apply. Message frequency varies. Reply STOP
@@ -152,7 +117,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={loading || !form.consent}
-                  className="self-start bg-gold text-white text-xs uppercase tracking-widest px-8 py-4 hover:bg-gold-light disabled:opacity-60 disabled:cursor-not-allowed transition-colors duration-200"
+                  className="self-start bg-gold text-white text-xs uppercase tracking-widest px-8 py-4 rounded-xl hover:bg-gold-light disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
                 >
                   {loading ? 'Sending…' : 'Send Message'}
                 </button>
@@ -162,25 +127,18 @@ export default function Contact() {
 
           {/* Contact info */}
           <div ref={infoRef} className="fade-in-up delay-200 lg:col-span-2 flex flex-col gap-8 pt-2">
-            <div>
-              <p
-                className="font-display text-white text-2xl font-light mb-6"
-                style={{ fontFamily: 'var(--font-display)' }}
-              >
-                Prefer to reach us directly?
-              </p>
-            </div>
+            <p
+              className="font-display text-white text-2xl font-light"
+              style={{ fontFamily: 'var(--font-display)' }}
+            >
+              Prefer to reach us directly?
+            </p>
 
             <div className="flex items-start gap-4">
               <Phone className="text-gold mt-0.5 shrink-0" size={18} />
               <div>
                 <p className="text-white/40 text-xs uppercase tracking-widest mb-1">Phone</p>
-                <a
-                  href="tel:+17186644026"
-                  className="text-white text-sm hover:text-gold transition-colors"
-                >
-                  718-664-4026
-                </a>
+                <a href="tel:+17186644026" className="text-white text-sm hover:text-gold transition-colors">718-664-4026</a>
               </div>
             </div>
 
@@ -188,12 +146,7 @@ export default function Contact() {
               <Mail className="text-gold mt-0.5 shrink-0" size={18} />
               <div>
                 <p className="text-white/40 text-xs uppercase tracking-widest mb-1">Email</p>
-                <a
-                  href="mailto:thegreenhillrealty@gmail.com"
-                  className="text-white text-sm hover:text-gold transition-colors"
-                >
-                  thegreenhillrealty@gmail.com
-                </a>
+                <a href="mailto:thegreenhillrealty@gmail.com" className="text-white text-sm hover:text-gold transition-colors">thegreenhillrealty@gmail.com</a>
               </div>
             </div>
 
@@ -201,9 +154,7 @@ export default function Contact() {
               <MapPin className="text-gold mt-0.5 shrink-0" size={18} />
               <div>
                 <p className="text-white/40 text-xs uppercase tracking-widest mb-1">Service Area</p>
-                <p className="text-white/70 text-sm leading-relaxed">
-                  New York, New Jersey &amp; Connecticut
-                </p>
+                <p className="text-white/70 text-sm leading-relaxed">New York, New Jersey &amp; Connecticut</p>
               </div>
             </div>
 
