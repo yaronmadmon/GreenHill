@@ -46,10 +46,10 @@ export default function Contact() {
             className="font-display text-white text-4xl md:text-5xl font-light"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            Let's talk about your property
+            We're here to listen
           </h2>
           <p className="text-white/50 text-sm mt-4 max-w-md mx-auto leading-relaxed">
-            No obligation. No pressure. Just an honest conversation about your options.
+            Whatever you're going through, we'd love to hear from you. No pressure, no judgment — just a real conversation.
           </p>
         </div>
 
